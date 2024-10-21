@@ -3,22 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="./20-08-2024/pages/about-us.html">About Us</a> | 
-            <a href="./20-08-2024/pages/our-team.html">Our Team</a> | 
-            <a href="./20-08-2024/pages/contact-us.html">contact Us</a> 
-        </nav>
-    </header>
+    <div class="main-box" id="sub-box">
+        <!-- box-1 elements will be dynamically added here -->
+    </div>
 
-    <main>
-        <h1>This my home page</h1>
-    </main>
+    <div class="list">
+        <ol>
+            <li>Item 1</li>
+            <li>Item 1</li>
+            <li>Item 1</li>
+            <li>Item 1</li>
+            
+        </ol>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14480.705903652959!2d67.0114716!3d24.857821549999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f35f52d7211%3A0x1ee84fe39beb7bc3!2sLight%20House%20Market!5e0!3m2!1sen!2s!4v1725955102091!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="icon">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fas fa-cloud"></i>
+<i class="fas fa-heart"></i>
+<i class="fas fa-car"></i>
+<i class="fas fa-file"></i>
+<i class="fas fa-bars"></i>
+    </div>
+
+    <script>
+        // Select the container where the dynamic content will go
+        const container = document.getElementById('sub-box');
+
+        // Define the number of boxes to create
+        let numberOfBoxes = 5;
+
+        // Arrays to store content for each box
+        const boxContents = [
+            {
+                imgSrc: 'https://completeroofingsolutions.pk/wp-content/uploads/2023/06/1.jpg',
+                alt: 'Image 1',
+                heading: 'Heading !1',
+                text: 'Content for Box 1: Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+                link: 'Read More', url: 'https://www.openai.com' 
+            },
+            {
+                imgSrc: 'https://completeroofingsolutions.pk/wp-content/uploads/2023/06/2.jpg',
+                alt: 'Image 2',
+                heading: 'Heading !2',
+                text: 'Content for Box 2: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                link: 'Read More', url: 'https://www.openai.com' 
+            },
+            {
+                imgSrc: 'https://completeroofingsolutions.pk/wp-content/uploads/2023/06/1.jpg',
+                alt: 'Image 3',
+                heading: 'Heading !3',
+                text: 'Content for Box 3: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+                link: 'Read More', url: 'https://www.openai.com' 
+            },
+            {
+                imgSrc: 'https://completeroofingsolutions.pk/wp-content/uploads/2023/06/2.jpg',
+                alt: 'Image 4',
+                heading: 'Heading !4',
+                text: 'Content for Box 4: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.',
+                link: 'Read More', url: 'https://www.openai.com' 
+            }
+            ,{
+                imgSrc: 'https://completeroofingsolutions.pk/wp-content/uploads/2023/06/1.jpg',
+                alt: 'Image 4',
+                heading: 'Heading !5',
+                text: 'Content for Box 4: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.',
+                link: 'Read More', url: 'https://www.openai.com' 
+            }
+        ];
+
+        // Loop through and create each box-1 div dynamically
+        for (let i = 0; i < numberOfBoxes; i++) {
+            // Create the box-1 div
+            const box = document.createElement('div');
+            box.classList.add('box-1');  // Add class 'box-1'
+
+            // Create the image element
+            const img = document.createElement('img');
+            img.src = boxContents[i].imgSrc;  // Set unique image source
+            img.alt = boxContents[i].alt;  // Set unique alt text
+
+                // Create the paragraph
+                const h2 = document.createElement('h2');
+            h2.textContent = boxContents[i].heading;  // Set unique text content
+
+            // Create the paragraph
+            const p = document.createElement('p');
+            p.textContent = boxContents[i].text;  // Set unique text content
+
+
+            const a = document.createElement('a');
+            a.textContent = boxContents[i].link;  // Set unique text content
+            a.href = boxContents[i].url;           // Set the URL for the link
+            a.target = '_blank';  
+
+            // Append the image and paragraph to the box
+            box.appendChild(img);
+            box.appendChild(h2);
+            box.appendChild(p);
+            box.appendChild(a);
+
+            // Append the box to the container
+            container.appendChild(box);
+        }
+    </script>
 </body>
 </html>
